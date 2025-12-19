@@ -1,61 +1,100 @@
-# Air Tracker: Flight Analytics
+##### \- Air Tracker – Flight Analytics
 
-PROJECT OVERVIEW
-An interactive aviation analytics dashboard built using Python, SQLite, and Streamlit.
-The application allows users to explore airports, flight schedules, and operational details,
-providing insights on flight delays, busiest routes, and airport operations.
+##### 
 
-SKILLS ACQUIRED
+##### \- Project Overview
 
-* Python scripting
-* API integration for data collection (used in Colab for database creation)
-* SQL database design and management
-* Data visualization using Streamlit and Altair
+##### &nbsp; - Air Tracker is a Python and Streamlit-based aviation analytics tool.
 
-FEATURES
+##### &nbsp; - Provides insights on airports, flights, delays, busiest routes, and aircraft usage.
 
-* Homepage dashboard with summary statistics
-* Flight search and filtering by status, airline, origin, and date range
-* Airport details viewer
-* Delay analysis with charts
-* Route leaderboards and busiest routes analysis
+##### &nbsp; - Uses SQL queries and interactive dashboards.
 
-DATABASE
+##### 
 
-* SQLite database (aviation.db) contains all flight, airport, and aircraft data
-* SQL queries are provided in sql\_queries.sql
-* Note: The database is pre-populated. API fetch scripts are not included
-  as the app runs fully using this database
+##### \- Features
 
-HOW TO RUN
+##### &nbsp; - Home Dashboard: Summary of total airports, flights, and average delays.
 
-1. Install required packages:
-   pip install -r requirements.txt
-2. Run the Streamlit app:
-   streamlit run app.py
-3. The app will open in your browser and load all data from aviation.db
-   Note: No API key or external fetch scripts are required for this demo
+##### &nbsp; - Search and Filter Flights: Filter by flight number, airline, origin, status, and date range.
 
-SQL QUERIES
+##### &nbsp; - Airport Details: Provides airport information and linked flights.
 
-* All required SQL queries for analytics are provided in sql\_queries.sql.
-* Queries include:
+##### &nbsp; - Delay Analysis: Shows airport-wise average delay with charts.
 
-  * Total flights per aircraft model
-  * Aircraft with more than 5 flights
-  * Outbound flights per airport
-  * Top 3 destination airports
-  * Domestic vs International flights
-  * Recent arrivals at DEL airport
-  * Airports with no arriving flights
-  * Flights count by airline and status
-  * Cancelled flights
-  * City pairs with more than 2 aircraft models
-  * Percentage of delayed flights per destination
+##### &nbsp; - Route Leaderboards: Displays busiest routes and most delayed airports.
 
-NOTES
+##### &nbsp; - SQL Insights: 11 advanced SQL queries for analytics.
 
-* SQLite is used for local demonstration; queries are compatible with MySQL/PostgreSQL
-* The app is fully functional with the provided database
-* API scripts used to fetch data in Colab are not included
-* You can safely share or run the project without access to the API
+##### &nbsp; - About / Creator: Project and creator information.
+
+##### 
+
+##### \- Technologies Used
+
+##### &nbsp; - Python 3.x
+
+##### &nbsp; - Streamlit
+
+##### &nbsp; - SQLite (aviation.db)
+
+##### &nbsp; - Pandas
+
+##### &nbsp; - Altair (for charts)
+
+##### 
+
+##### \- Folder Structure
+
+##### &nbsp; - `app.py` – Main Streamlit application
+
+##### &nbsp; - `aviation.db` – SQLite database
+
+##### &nbsp; - `requirements.txt` – Python dependencies
+
+##### &nbsp; - `README.md` – This documentation
+
+##### 
+
+##### \- Features Explained
+
+##### &nbsp; - Pagination: Tables with many rows use pagination for performance. Each table uses a unique key in Streamlit to avoid duplicate widget ID errors.
+
+##### &nbsp; - Cached SQL Queries: Queries are cached using `st.cache\_data` for faster performance.
+
+##### &nbsp; - Responsive UI: Streamlit widgets like filters and date selectors update tables dynamically. Layout is minimalist and beginner-friendly.
+
+##### 
+
+##### \- Best Practices Implemented
+
+##### &nbsp; - Coding Standards: PEP8, meaningful variable names, modular functions.
+
+##### &nbsp; - SQL Practices: Normalized tables, indexes created for performance.
+
+##### &nbsp; - Streamlit UI: Interactive widgets, pagination, responsive layout.
+
+##### &nbsp; - Performance: Cached queries and paginated tables.
+
+##### &nbsp; - Documentation \& Testing: Docstrings in code, tested components, this README.
+
+##### 
+
+##### \- Creator
+
+##### &nbsp; - Name: Gokulraj K
+
+##### &nbsp; - Skills Used: Python, SQL, API Integration, Streamlit, Data Analytics
+
+##### 
+
+##### \- Demo
+
+##### &nbsp; - Run the app locally using `streamlit run app.py`.
+
+##### &nbsp; - Explore dashboards, filter flights, and analyze delays.
+
+##### &nbsp; - Check SQL Insights for detailed flight analytics.
+
+##### 
+
