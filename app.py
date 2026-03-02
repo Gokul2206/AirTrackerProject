@@ -96,7 +96,14 @@ def home_dashboard():
 def search_flights():
     """Search flights with filters: number, airline, origin, status, date range."""
     st.subheader("Search and Filter Flights")
-    flight_no = st.text_input("Search by Flight Number")
+
+    # Fetch distinct flight numbers from the database
+    flight_numbers = execute_query(
+        "SELECT DISTINCT flight_number FROM flights WHERE flight_number IS NOT NULL AND flight_number <> ''"
+    )["flight_number"].tolist()
+
+    # Dropdown instead of manual text input
+    flight_no = st.selectbox("Select Flight Number", ["All"] + flight_numbers)
 
     airlines = execute_query(
         "SELECT DISTINCT airline_code FROM flights WHERE airline_code IS NOT NULL AND airline_code <> ''"
@@ -126,9 +133,9 @@ def search_flights():
     """
     params = status.copy()
 
-    if flight_no:
-        query += " AND flight_number LIKE ?"
-        params.append(f"%{flight_no}%")
+    if flight_no != "All":
+        query += " AND flight_number = ?"
+        params.append(flight_no)
     if airline != "All":
         query += " AND airline_code = ?"
         params.append(airline)
