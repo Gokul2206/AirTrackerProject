@@ -25,7 +25,7 @@ HEADERS = {
 # -----------------------------
 # DATABASE CONNECTION
 # -----------------------------
-def get_connection(db_file="flights.db"):
+def get_connection(db_file="aviation.db"):
     """Create SQLite connection."""
     return sqlite3.connect(db_file)
 
